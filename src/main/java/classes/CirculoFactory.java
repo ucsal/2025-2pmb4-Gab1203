@@ -8,4 +8,9 @@ public class CirculoFactory implements ShapeFactory {
     public Shape createShape(double x, double y, double width, double height) {
         return new Ellipse2D.Double(x,y,width,height);
     }
+
+    @Override
+    public String getShapeName() {
+        return "Círculo";
+    }
 }
