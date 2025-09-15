@@ -46,6 +46,14 @@ class DrawingPanel extends JPanel {
         repaint();
     }
 
+
+    public void setCor(ColorFactory cor){
+        this.cor = cor.getColor();
+        repaint();
+    }
+
+
+
     @Override protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g.create();
