@@ -2,7 +2,7 @@ package classes;
 
 import java.awt.*;
 
-public class Blue implements ColorFactory{
+public class BlueFactory implements ColorFactory{
 
 
     @Override

@@ -1,6 +1,7 @@
 
 package br.com.mariojp.figureeditor;
 
+import classes.ColorFactory;
 import classes.ShapeFactory;
 
 import javax.swing.*;
@@ -17,12 +18,14 @@ class DrawingPanel extends JPanel {
     private static final int DEFAULT_SIZE = 60;
     private final List<Shape> shapes = new ArrayList<>();
     private Point startDrag = null;
+    private Color cor;
 
-    DrawingPanel(ShapeFactory shapeFactory) {
+    DrawingPanel(ShapeFactory shapeFactory, ColorFactory color) {
         
         setBackground(Color.WHITE);
         setOpaque(true);
         setDoubleBuffered(true);
+        this.cor = color.getColor();
 
         var mouse = new MouseAdapter() {
             @Override public void mouseClicked(MouseEvent e) {
@@ -49,11 +52,8 @@ class DrawingPanel extends JPanel {
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
         for (Shape s : shapes) {
-            g2.setColor(new Color(30,144,255));
+            g2.setColor(this.cor);
             g2.fill(s);
-            g2.setColor(new Color(0,0,0,70));
-            g2.setStroke(new BasicStroke(1.2f));
-            g2.draw(s);
         }
 
         g2.dispose();

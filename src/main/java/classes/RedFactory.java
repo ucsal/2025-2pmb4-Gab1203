@@ -2,7 +2,7 @@ package classes;
 
 import java.awt.*;
 
-public class Red implements ColorFactory{
+public class RedFactory implements ColorFactory{
     @Override
     public String getColorName() {
         return "Vermelho";

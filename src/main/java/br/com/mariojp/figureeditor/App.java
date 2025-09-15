@@ -15,9 +15,8 @@ public class App {
             JFrame frame = new JFrame("Figure Editor — Clique para inserir figuras");
             frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-            JButton colorBtn = new JButton();
 
-            DrawingPanel panel = new DrawingPanel(new RetanguloFactory());
+            DrawingPanel panel = new DrawingPanel(new RetanguloFactory(), new Colo);
 
             frame.setLayout(new BorderLayout());
             frame.add(panel, BorderLayout.CENTER);
